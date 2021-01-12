@@ -5,10 +5,21 @@ document.addEventListener("DOMContentLoaded", () => {
     el: "#app",
     data: {
       //data goes here
-      taskList: ["Wash Car", "Do Homework", "Walk Dog"],
+      taskList: [
+          "Wash Car", "Do Homework", "Walk Dog"
+        ],
+      newTask: ""
     },
+
     methods: {
       //methods go here
-    },
+      addNewTask: function(){
+        this.taskList.push(this.newTask);
+        this.newTask = "";
+      },
+      clearTasks: function(){
+          this.taskList = []
+      }
+    }
   });
 });

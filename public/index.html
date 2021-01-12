@@ -12,6 +12,13 @@
 <body>
 
     <div id="app">
+        <form v-on:submit.prevent="addNewTask">
+            <label for="new-task">Add new task: </label>
+            <input type="text" id="new-task" v-model="newTask" />
+            <input type="drop-down" id="new-task" v-model="newTask" />
+            <input type="submit" value="Save New Task" />
+        </form>
+        <button v-on:click="clearTasks">Clear Tasks</button>
         <ul>
             <li v-for="task in taskList">
                 <span> {{ task }}</span>
